@@ -1,0 +1,32 @@
+br.com.esparda.nome=Esparda
+br.com.esparda.info=${br.com.esparda.nome}: ${br.com.esparda.privilegioacesso.nome} ${br.com.esparda.privilegioacesso.versao}
+
+br.com.esparda.privilegioacesso.nome=Microservice Privilegio de Acesso
+br.com.esparda.privilegioacesso.versao=V1
+
+br.com.esparda.privilegioacesso.datasource.url=jdbc:h2:file:./db/privilegioacesso
+br.com.esparda.privilegioacesso.datasource.username=sa
+br.com.esparda.privilegioacesso.datasource.password=sa
+br.com.esparda.privilegioacesso.datasource.driverClassName=org.h2.Driver
+
+server.port = 50103
+server.contextPath=/v1/privilegioacesso
+
+spring.datasource.url=${br.com.esparda.privilegioacesso.datasource.url}
+spring.datasource.username=${br.com.esparda.privilegioacesso.datasource.username}
+spring.datasource.password=${br.com.esparda.privilegioacesso.datasource.username}
+spring.datasource.driverClassName=${br.com.esparda.privilegioacesso.datasource.driverClassName}
+
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.hibernate.show-sql = true
+
+oauth2.resource.userInfoUri=http://localhost:50000/auth-service/user
+
+auth.server.url=http://localhost:50000/auth-service/oauth/check_token/
+auth.server.clientId=soncrserv
+auth.server.clientsecret=soncrserv
+
+spring.activemq.broker-url=tcp://localhost:61616
+spring.activemq.user=admin
+spring.activemq.password=admin
+spring.activemq.pooled=false

@@ -1,0 +1,42 @@
+debug:
+server:
+  port: 50003
+security:
+  user:
+    password: none
+zuul:
+  routes:
+    oauth:
+      path: /oauth/**
+      url: http://localhost:50000/auth-service/
+    storage:
+      path: storage/**
+      url: http://localhost:50002/v1/storage
+    pessoa:
+      path: rest/pessoa/**
+      url: http://localhost:50101/v1/pessoa
+    processo:
+      path: rest/processo/**
+      url: http://localhost:50102/v1/processo
+    privilegioacesso:
+      path: rest/privilegioacesso/**
+      url: http://localhost:50103/v1/privilegioacesso
+    usuario:
+      path: rest/usuario/**
+      url: http://localhost:50104/v1/usuario
+spring:
+  oauth2:
+    sso:
+      home:
+        secure: false
+        path: /,/**/*.html
+    client:
+      accessTokenUri: http://localhost:50000/auth-service/oauth/token
+      userAuthorizationUri: http://localhost:50000/auth-service/oauth/authorize
+      clientId: esparda-web-sga
+      clientSecret: asdf
+    resource:
+      userInfoUri: http://localhost:50104/v1/usuario/principal
+logging:
+  level:
+    org.springframework.security: DEBUG

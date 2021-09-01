@@ -1,0 +1,52 @@
+<div ng-show="authenticated">
+
+
+	<ul>
+		<li>Privilegio Acesso:
+			<a href="" ng-click="pesquisar_click('rest/privilegioacesso')"        >All</a>
+			<a href="" ng-click="pesquisar_click('rest/privilegioacesso/1')"      >1</a>
+			<a href="" ng-click="pesquisar_click('rest/privilegioacesso/2')"      >2</a>
+			<a href="" ng-click="pesquisar_click('rest/privilegioacesso/3')"      >3</a>
+			<a href="" ng-click="pesquisar_click('rest/privilegioacesso/4')"      >4</a>
+			<a href="" ng-click="pesquisar_click('rest/privilegioacesso/install')">install</a>
+			<a href="" ng-click="pesquisar_click('rest/privilegioacesso/clean')">clean</a>
+		</li>
+		<li>Usuario:
+			<a href="" ng-click="pesquisar_click('rest/usuario')">All</a>
+			<a href="" ng-click="pesquisar_click('rest/usuario/1')">1</a>
+			<a href="" ng-click="pesquisar_click('rest/usuario/autenticado')">autenticado</a>
+			<a href="" ng-click="pesquisar_click('rest/usuario/principal')">principal</a>
+			<a href="" ng-click="pesquisar_click('rest/usuario/install')">install</a>
+			<a href="" ng-click="pesquisar_click('rest/usuario/clean')">clean</a>
+		</li>
+		<li>Processo:
+			<a href="" ng-click="pesquisar_click('rest/processo')">All</a>
+			<a href="" ng-click="pesquisar_click('rest/processo/1')">1</a>
+			<a href="" ng-click="pesquisar_click('rest/processo/install')">install</a>
+			<a href="" ng-click="pesquisar_click('rest/processo/clean')">clean</a>
+		</li>
+		<li>Pessoa:
+			<a href="" ng-click="pesquisar_click('rest/pessoa')">All</a>
+			<a href="" ng-click="pesquisar_click('rest/pessoa/1')">1</a>
+			<a href="" ng-click="pesquisar_click('rest/pessoa/install')">install</a>
+			<a href="" ng-click="pesquisar_click('rest/pessoa/clean')">clean</a>
+		</li>
+		<li>Storage:
+			<a href="" ng-click="pesquisar_click('storage/info')">storage/info</a>
+			<a href="" ng-click="pesquisar_click('storage/pessoa/count')">storage/pessoa/count</a>
+			<a href="" ng-click="pesquisar_click('storage/usuario/count')">storage/usuario/count</a>
+			<a href="" ng-click="pesquisar_click('storage/processo/count')">storage/processo/count</a>
+			<a href="" ng-click="pesquisar_click('storage/privilegioacesso/count')">storage/privilegioacesso/count</a>
+			<a href="" ng-click="pesquisar_click('storage/usuario/244')">storage/usuario/244</a>
+		</li>
+	</ul>
+
+
+	<h3>retorno: {{retorno}}</h3>
+	<div ng-show="has403">
+		<h3>{{errorMsg}}</h3>
+	</div>
+</div>
+<div ng-show="!authenticated">
+	<p>Bem vindo</p>
+</div>

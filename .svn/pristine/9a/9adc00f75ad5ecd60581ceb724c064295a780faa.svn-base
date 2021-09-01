@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="basic">
+	<fileSets>
+		<fileSet filtered="true">
+			<directory>src/main/resources/</directory>
+		</fileSet>
+		<fileSet filtered="true">
+			<directory>src/main/java/br/com/esparda/__serviceLowerCase__
+			</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/java/br/com/esparda/__serviceLowerCase__/controller
+			</directory>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/java/br/com/esparda/__serviceLowerCase__/domain
+			</directory>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/java/br/com/esparda/__serviceLowerCase__/repository
+			</directory>
+		</fileSet>
+
+		<fileSet filtered="true">
+			<directory>src/etc/</directory>
+		</fileSet>
+
+		<fileSet filtered="true">
+			<directory>src/test/java/br/com/esparda/__serviceLowerCase__
+			</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+	<requiredProperties>
+		<requiredProperty key="service" />
+		<requiredProperty key="port" />
+		<requiredProperty key="serviceLowerCase">
+			<defaultValue>${service.toLowerCase()}</defaultValue>
+		</requiredProperty>
+	</requiredProperties>
+</archetype-descriptor>

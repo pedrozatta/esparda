@@ -1,0 +1,29 @@
+<div ng-show="authenticated">
+	<table class="table table-hover">
+		<caption>
+			<button type="submit" class="btn btn-default" ng-click="atualizar()">Atualizar</button>
+			<button type="submit" class="btn btn-default" ng-click="limpar()">Limpar</button>
+		</caption>
+		<thead>
+			<tr>
+				<th>Servico</th>
+				<th>Quantidade</th>
+				<th>Primeira Mensagem</th>
+				<th>Ultima Mensagem</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in lista">
+				<th scope="row">{{item.info}}</th>
+				<td>{{item.quantidade}}</td>
+				<td>{{item.primeira}}</td>
+				<td>{{item.ultima}}</td>
+				<td>{{item.status}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div ng-show="!authenticated">
+	<p>verificando autenticacao...</p>
+</div>

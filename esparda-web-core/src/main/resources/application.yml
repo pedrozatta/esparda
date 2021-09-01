@@ -1,0 +1,70 @@
+debug:
+server:
+  port: 50001
+security:
+  user:
+    password: none
+zuul:
+  routes:
+    oauth:
+      path: /oauth/**
+      url: http://localhost:50000/auth-service/
+    storage:
+      path: storage/**
+      url: http://localhost:50002/v1/storage
+    monitor:
+      path: monitor/**
+      url: http://localhost:50004/v1/monitor
+    pessoa:
+      path: rest/pessoa/**
+      url: http://localhost:50101/v1/pessoa
+    processo:
+      path: rest/processo/**
+      url: http://localhost:50102/v1/processo
+    privilegioacesso:
+      path: rest/privilegioacesso/**
+      url: http://localhost:50103/v1/privilegioacesso
+    usuario:
+      path: rest/usuario/**
+      url: http://localhost:50104/v1/usuario
+    sistema:
+      path: rest/sistema/**
+      url: http://localhost:50105/v1/sistema
+    dominio:
+      path: rest/dominio/**
+      url: http://localhost:50108/v1/dominio
+    mensagem:
+      path: rest/mensagem/**
+      url: http://localhost:50109/v1/mensagem
+    vendedor:
+      path: rest/vendedor/**
+      url: http://localhost:50112/v1/vendedor
+    categoria:
+      path: rest/categoria/**
+      url: http://localhost:50113/v1/categoria
+    solicitacaoorcamento:
+      path: rest/solicitacaoorcamento/**
+      url: http://localhost:50114/v1/solicitacaoorcamento
+    orcamento:
+      path: rest/orcamento/**
+      url: http://localhost:50115/v1/orcamento
+    imagem:
+      path: rest/imagem/**
+      url: http://localhost:50116/v1/imagem
+
+spring:
+  oauth2:
+    sso:
+      home:
+        secure: false
+        path: /,/**/*.html
+    client:
+      accessTokenUri: http://localhost:50000/auth-service/oauth/token
+      userAuthorizationUri: http://localhost:50000/auth-service/oauth/authorize
+      clientId: esparda-web-core
+      clientSecret: asdf
+    resource:
+      userInfoUri: http://localhost:50104/v1/usuario/principal
+logging:
+  level:
+    org.springframework.security: DEBUG
